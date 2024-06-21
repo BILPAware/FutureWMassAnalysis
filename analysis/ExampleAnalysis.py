@@ -24,6 +24,6 @@ class ExampleAnalysis(Analysis.Analysis):
         super(ExampleAnalysis, self).__init__(ExampleHistograms)
 
     def selection(self, sample):
-        if sample.Muon.GetEntries()<2:
+        if len(sample.Muon)<2:
             return False
         return True

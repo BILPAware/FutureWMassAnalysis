@@ -8,6 +8,9 @@ class Sample:
         self.reader=None
 
         self.Muon=None
+        self.Jet=None
+        self.FatJet=None
+        self.MissingET=None
 
     def add_file(self, path):
         self.files.append(path)
@@ -23,3 +26,6 @@ class Sample:
 
         # Get pointers to branches used in this analysis
         self.Muon = self.reader.UseBranch("Muon")
+        self.Jet = self.reader.UseBranch("Jet")
+        self.FatJet = self.reader.UseBranch("FatJet")
+        self.MissingET = self.reader.UseBranch("MissingET")

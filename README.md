@@ -21,7 +21,7 @@ vim .analysis.yaml
 Run the following inside the `Reading-from-Delphes` directory.
 
 ```
-python PlotFromRoot.py example.yaml
+pipenv run python PlotFromRoot.py example.yaml
 ```
 
 It works with signal samples provided [here](https://bilpa.docs.cern.ch/projects/wmass/samples/).
