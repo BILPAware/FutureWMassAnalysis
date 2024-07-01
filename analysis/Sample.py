@@ -8,6 +8,7 @@ class Sample:
         self.reader=None
 
         self.Muon=None
+        self.Electron=None
         self.Jet=None
         self.FatJet=None
         self.MissingET=None
@@ -26,6 +27,7 @@ class Sample:
 
         # Get pointers to branches used in this analysis
         self.Muon = self.reader.UseBranch("Muon")
+        self.Electron = self.reader.UseBranch("Electron")
         self.Jet = self.reader.UseBranch("Jet")
         self.FatJet = self.reader.UseBranch("FatJet")
         self.MissingET = self.reader.UseBranch("MissingET")
