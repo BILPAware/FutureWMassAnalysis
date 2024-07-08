@@ -66,6 +66,10 @@ def main(runconfig_path, nevents=-1):
             path=[path]
 
         for p in path:
+            # Relative paths should be relative to datadir
+            if not path.startswith('/'):
+                path=f'{config.datadir}/{path}'
+            # Add file to the sample
             sample.add_file(p)
         sample.style=input.get('style', {})
         sample.open()
