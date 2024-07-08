@@ -1,6 +1,8 @@
 import ROOT
 import argparse
 
+from functools import partial
+
 from analysis import config
 from analysis import Sample
 from analysis import ExampleAnalysis
@@ -46,7 +48,7 @@ def plot_and_save(*args):
         # Save the canvas as a PNG file
         canvas.SaveAs(f'{hname}.png')
 
-def main(runconfig_path):
+def main(runconfig_path, nevents=-1):
     """
     Main function to read tree contents, create distributions, and plot/save 
     the histograms.
@@ -72,7 +74,7 @@ def main(runconfig_path):
 
     analysis=ExampleAnalysis.ExampleAnalysis()
 
-    hists=map(analysis.run, samples)
+    hists=map(partial(analysis.run, nevents=nevents), samples)
 
     plot_and_save(*list(hists))
 
@@ -80,6 +82,7 @@ if __name__ == "__main__":
     # Set up argument parser
     parser = argparse.ArgumentParser(description="script that reads root files to create and plot distributions.")
     parser.add_argument("runconfig", type=str, help="Path to the run configuration YAML file.")
+    parser.add_argument("-n", "--nevents", type=int, default=-1, help="Maximum number of events to process per sample..")
 
     ROOT.gInterpreter.AddIncludePath(f"{config.mg5amcnlo}/Delphes");
     ROOT.gInterpreter.AddIncludePath(f"{config.mg5amcnlo}/Delphes/external");
@@ -90,4 +93,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Execute the main function with the provided arguments
-    main(args.runconfig)
+    main(args.runconfig, nevents=args.nevents)
