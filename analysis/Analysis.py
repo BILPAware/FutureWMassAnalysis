@@ -76,6 +76,6 @@ class Analysis:
             attr=getattr(histograms, attrname)
             if not isinstance(attr,ROOT.TH1):
                 continue # not a histogram
-            attr.Scale(1./sample.reader.GetEntries())
+            attr.Scale(sample.crosssection/sample.reader.GetEntries())
 
         return histograms
