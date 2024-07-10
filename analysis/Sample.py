@@ -6,6 +6,7 @@ class Sample:
         self.files = []
 
         self.reader=None
+        self.crosssection=1
 
         self.Muon=None
         self.Electron=None
