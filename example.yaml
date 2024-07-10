@@ -1,3 +1,9 @@
+ratio:
+  reference: 1
+  yaxis:
+    min: 0.9
+    max: 1.1
+    title: ratio
 inputs:
   - path: /disk/moose/general/FutureWMass/samples/uC_ww_leplep_sqrts10000_mw78900.root
     title: 78.9 GeV
