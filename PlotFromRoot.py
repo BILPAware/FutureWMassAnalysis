@@ -8,8 +8,9 @@ from analysis import ExampleAnalysis
 from kkconfig import runconfig
 
 from kkroot import style
+from kkroot import canvas
 
-def plot_and_save(*args):
+def plot_and_save(*args, ratio=None):
     """
     Creates a THStack to overlay the histograms inside `*args, draws the
     stack on a canvas, and saves the plot as a PNG file.
@@ -23,28 +24,55 @@ def plot_and_save(*args):
     for hname in hnames:
         print(f'Plotting {hname}')
         # Create a canvas
-        canvas = ROOT.TCanvas()
+        c = ROOT.TCanvas()
+        if ratio is None:
+            pad,pad_ratio = c,None
+        else:
+            pad,pad_ratio = canvas.apply_ratio_canvas_style(c)
 
         # Create THStack
-        stack = ROOT.THStack(f"hs_{hname}", '')
+        hs = ROOT.THStack(f"hs_{hname}", '')
+        hs_ratio = ROOT.THStack(f"hs_ratio_{hname}", '')
 
         exhist=getattr(args[0],hname)
 
+        # Get reference histogram for ratios
+        h_ref = getattr(args[ratio.get('reference',0)], hname) if ratio is not None else None
+
         # Create and style the histogram
         for histobj in args:
+            # Add and style histogram
             hist=getattr(histobj, hname)
             style.style(hist,**histobj.style)
+            hs.Add(hist, 'HIST')
 
-            stack.Add(hist, 'HIST')
+            # Add the ratio plot
+            if h_ref is not None:
+                hrat=hist.Clone()
+                hrat.Divide(h_ref)
+                hs_ratio.Add(hrat, 'HIST')
 
         # Draw stack
-        stack.Draw("nostack")
-        stack.GetXaxis().SetTitle(exhist.GetXaxis().GetTitle())
-        stack.GetYaxis().SetTitle(exhist.GetYaxis().GetTitle())
-        canvas.BuildLegend()
+        pad.cd()
+        hs.Draw("nostack")
+        hs.GetXaxis().SetTitle(exhist.GetXaxis().GetTitle())
+        hs.GetYaxis().SetTitle(exhist.GetYaxis().GetTitle())
+        pad.BuildLegend()
+        pad.Update()
+
+        # Draw ratio (if requested)
+        if pad_ratio is not None:
+            pad_ratio.cd()
+            hs_ratio.Draw("nostack")
+            hs_ratio.GetXaxis().SetTitle(exhist.GetXaxis().GetTitle())
+            canvas.apply_ratio_axis_style(hs_ratio)
+
+            style.style(hs_ratio, **ratio)
+
+            pad_ratio.Update()
 
         # Save the canvas as a PNG file
-        canvas.SaveAs(f'{hname}.png')
+        c.SaveAs(f'{hname}.png')
 
 def main(runconfig_path):
     """
@@ -74,7 +102,7 @@ def main(runconfig_path):
 
     hists=map(analysis.run, samples)
 
-    plot_and_save(*list(hists))
+    plot_and_save(*list(hists), ratio=runcfg.get('ratio', None))
 
 if __name__ == "__main__":
     # Set up argument parser
