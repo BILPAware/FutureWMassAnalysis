@@ -12,6 +12,91 @@ from kkconfig import runconfig
 from kkroot import style
 from kkroot import canvas
 
+def plot_and_save_TH1(hname, *args, ratio=None):
+"""
+    Plot and save 1D histograms.
+
+    The histograms of all samples are added to a single
+    THStack and then plotted on a canvas. The canvas is saved
+    as a PNG file.
+    """
+    # Create a canvas
+    c = ROOT.TCanvas()
+
+    if ratio is None:
+        pad,pad_ratio = c,None
+    else:
+        pad,pad_ratio = canvas.apply_ratio_canvas_style(c)
+
+    # Get a histogram type to determine common useful things
+    exhist=getattr(args[0],hname)
+
+    # Create THStack
+    hs = ROOT.THStack(f"hs_{hname}", '')
+    hs_ratio = ROOT.THStack(f"hs_ratio_{hname}", '')
+
+    # Get reference histogram for ratios
+    h_ref = getattr(args[ratio.get('reference',0)], hname) if ratio is not None else None
+
+    # Create and style the histogram
+    for histobj in args:
+        # Add and style histogram
+        hist=getattr(histobj, hname)
+        style.style(hist,**histobj.style)
+        hs.Add(hist, 'HIST')
+
+        # Add the ratio plot
+        if h_ref is not None:
+            hrat=hist.Clone()
+            hrat.Divide(h_ref)
+            hs_ratio.Add(hrat, 'HIST')
+
+    # Draw stack
+    pad.cd()
+    hs.Draw("nostack")
+    hs.GetXaxis().SetTitle(exhist.GetXaxis().GetTitle())
+    hs.GetYaxis().SetTitle(exhist.GetYaxis().GetTitle())
+    pad.BuildLegend()
+    pad.Update()
+
+    # Draw ratio (if requested)
+    if pad_ratio is not None:
+        pad_ratio.cd()
+        hs_ratio.Draw("nostack")
+        hs_ratio.GetXaxis().SetTitle(exhist.GetXaxis().GetTitle())
+        canvas.apply_ratio_axis_style(hs_ratio)
+
+        style.style(hs_ratio, **ratio)
+
+        pad_ratio.Update()
+
+    # Save the canvas as a PNG file
+    c.SaveAs(f'{hname}.png')
+
+def plot_and_save_TH2(hname, *args):
+    """
+    Plot and save 2D histograms.
+
+    The histograms for each sample are plotted independently and
+    saved with the title of the sample in the filename.
+    """
+    # Create a canvas
+    c = ROOT.TCanvas()
+
+    # Create and style the histogram
+    for histobj in args:
+        c.Clear()
+
+        # Add and style histogram
+        hist=getattr(histobj, hname)
+        style.style(hist,**histobj.style)
+
+        # Draw the histogram
+        hist.Draw('COLZ')
+
+        # Save the canvas as a PNG file
+        c.SaveAs(f'{hname}_{histobj.title}.png')
+
 def plot_and_save(*args, ratio=None):
     """
     Creates a THStack to overlay the histograms inside `*args, draws the
@@ -27,54 +112,14 @@ def plot_and_save(*args, ratio=None):
         print(f'Plotting {hname}')
         # Create a canvas
         c = ROOT.TCanvas()
-        if ratio is None:
-            pad,pad_ratio = c,None
-        else:
-            pad,pad_ratio = canvas.apply_ratio_canvas_style(c)
-
-        # Create THStack
-        hs = ROOT.THStack(f"hs_{hname}", '')
-        hs_ratio = ROOT.THStack(f"hs_ratio_{hname}", '')
-
+        
+        # Get a histogram type to determine common useful things
         exhist=getattr(args[0],hname)
 
-        # Get reference histogram for ratios
-        h_ref = getattr(args[ratio.get('reference',0)], hname) if ratio is not None else None
-
-        # Create and style the histogram
-        for histobj in args:
-            # Add and style histogram
-            hist=getattr(histobj, hname)
-            style.style(hist,**histobj.style)
-            hs.Add(hist, 'HIST')
-
-            # Add the ratio plot
-            if h_ref is not None:
-                hrat=hist.Clone()
-                hrat.Divide(h_ref)
-                hs_ratio.Add(hrat, 'HIST')
-
-        # Draw stack
-        pad.cd()
-        hs.Draw("nostack")
-        hs.GetXaxis().SetTitle(exhist.GetXaxis().GetTitle())
-        hs.GetYaxis().SetTitle(exhist.GetYaxis().GetTitle())
-        pad.BuildLegend()
-        pad.Update()
-
-        # Draw ratio (if requested)
-        if pad_ratio is not None:
-            pad_ratio.cd()
-            hs_ratio.Draw("nostack")
-            hs_ratio.GetXaxis().SetTitle(exhist.GetXaxis().GetTitle())
-            canvas.apply_ratio_axis_style(hs_ratio)
-
-            style.style(hs_ratio, **ratio)
-
-            pad_ratio.Update()
-
-        # Save the canvas as a PNG file
-        c.SaveAs(f'{hname}.png')
+        if exhist.InheritsFrom('TH2'):
+            plot_and_save_TH2(hname, *args)
+        elif exhist.InheritsFrom('TH1'):
+            plot_and_save_TH1(hname, *args, ratio=ratio)
 
 def main(runconfig_path, nevents=-1):
     """
