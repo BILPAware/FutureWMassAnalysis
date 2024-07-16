@@ -1,0 +1,12 @@
+README.md
+setup.cfg
+setup.py
+Reading_from_Delphes.egg-info/PKG-INFO
+Reading_from_Delphes.egg-info/SOURCES.txt
+Reading_from_Delphes.egg-info/dependency_links.txt
+Reading_from_Delphes.egg-info/requires.txt
+Reading_from_Delphes.egg-info/top_level.txt
+analysis/Analysis.py
+analysis/ExampleAnalysis.py
+analysis/Sample.py
+analysis/config.py
