@@ -13,7 +13,7 @@ from kkroot import style
 from kkroot import canvas
 
 def plot_and_save_TH1(hname, *args, ratio=None):
-"""
+    """
     Plot and save 1D histograms.
 
     The histograms of all samples are added to a single
@@ -56,7 +56,7 @@ def plot_and_save_TH1(hname, *args, ratio=None):
     hs.Draw("nostack")
     hs.GetXaxis().SetTitle(exhist.GetXaxis().GetTitle())
     hs.GetYaxis().SetTitle(exhist.GetYaxis().GetTitle())
-    pad.BuildLegend()
+    pad.BuildLegend(0.6,0.95-0.07*len(args),0.95,0.95)
     pad.Update()
 
     # Draw ratio (if requested)
