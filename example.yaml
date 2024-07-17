@@ -1,19 +1,34 @@
-ratio:
-  reference: 1
-  yaxis:
-    min: 0.9
-    max: 1.1
-    title: ratio
+#ratio:
+  #reference: 1
+  #yaxis:
+    #min: 0.9
+    #max: 1.15
+    #title: ratio
 inputs:
-  - path: /disk/moose/general/FutureWMass/samples/uC_ww_leplep_sqrts10000_mw78900.root
-    title: 78.9 GeV
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_bg_nowm/Events/run_03/tag_1_delphes_events.root
+    title: W+ > q q
+    crosssection: 3.03
     style:
       linecolor: kRed
-  - path: /disk/moose/general/FutureWMass/samples/uC_ww_leplep_sqrts10000_mw80200.root
-    title: 80.2 GeV
+  - path: /disk/moose/general/FutureWMass/samples/semileptonic_real/Events/run_03/tag_1_delphes_events.root
+    title: 80.3692
+    crosssection: 0.252
     style:
-      linecolor: kBlack
-  - path: /disk/moose/general/FutureWMass/samples/uC_ww_leplep_sqrts10000_mw81400.root
-    title: 81.4 GeV
+      linecolor: kGreen
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_bg_nowp/Events/run_03/tag_1_delphes_events.root
+    title: W- > q q
+    crosssection: 3.028
     style:
       linecolor: kBlue
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_bg_qqwp/Events/run_03/tag_1_delphes_events.root
+    title: W+ > l v
+    crosssection: 0.00564
+    style:
+      linecolor: kMagenta
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_bg_qqwm/Events/run_03/tag_1_delphes_events.root
+    title: W- > l v
+    crosssection: 0.007853
+    style:
+      linecolor: kSpring
+
+

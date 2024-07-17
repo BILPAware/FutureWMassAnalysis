@@ -4,6 +4,7 @@ class Sample:
     def __init__(self, title=''):
         self.title = title
         self.files = []
+        self.crosssection = 1
 
         self.reader=None
 
