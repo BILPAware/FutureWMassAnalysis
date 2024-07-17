@@ -1,8 +1,8 @@
 ratio:
   reference: 1
   yaxis:
-    min: 0.8
-    max: 1.2
+    min: 0.9
+    max: 1.1
     title: ratio
 inputs:
   - path: /disk/homedisk/home/user289/mg5amcnlo/mass_range_sig_162.3/Events/run_01/tag_1_delphes_events.root
