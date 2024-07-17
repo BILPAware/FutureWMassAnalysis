@@ -5,29 +5,29 @@
     #max: 1.15
     #title: ratio
 inputs:
-  - path: /disk/moose/general/FutureWMass/samples/js_gamma_gamma_1000000/Events/run_01/tag_1_delphes_events.root
-    title: 79.3692
-    crosssection: 0.2375
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_bg_nowm/Events/run_03/tag_1_delphes_events.root
+    title: W+ > q q
+    crosssection: 3.03
     style:
       linecolor: kRed
-  - path: /disk/moose/general/FutureWMass/samples/js_gamma_gamma_1000000/Events/run_02/tag_1_delphes_events.root
+  - path: /disk/moose/general/FutureWMass/samples/semileptonic_real/Events/run_03/tag_1_delphes_events.root
     title: 80.3692
     crosssection: 0.252
     style:
       linecolor: kGreen
-  - path: /disk/moose/general/FutureWMass/samples/js_gamma_gamma_1000000/Events/run_03/tag_1_delphes_events.root
-    title: 80.3559
-    crosssection: 0.2521
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_bg_nowp/Events/run_03/tag_1_delphes_events.root
+    title: W- > q q
+    crosssection: 3.028
     style:
       linecolor: kBlue
-  - path: /disk/moose/general/FutureWMass/samples/js_gamma_gamma_1000000/Events/run_04/tag_1_delphes_events.root
-    title: 80.3825
-    crosssection: 0.2525
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_bg_qqwp/Events/run_03/tag_1_delphes_events.root
+    title: W+ > l v
+    crosssection: 0.00564
     style:
       linecolor: kMagenta
-  - path: /disk/moose/general/FutureWMass/samples/js_gamma_gamma_1000000/Events/run_05/tag_1_delphes_events.root
-    title: 81.3692
-    crosssection: 0.2672
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_bg_qqwm/Events/run_03/tag_1_delphes_events.root
+    title: W- > l v
+    crosssection: 0.007853
     style:
       linecolor: kSpring
 

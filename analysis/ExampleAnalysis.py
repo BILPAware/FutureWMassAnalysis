@@ -55,7 +55,7 @@ class ExampleHistograms(Analysis.Histograms):
         
         """
         semi leptonic background
-        
+        """
         
         self.hist_semilep_bg_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};leading lepton p_{{T}} [GeV];a.u.', 250, 0, 10000)
         self.hist_semilep_bg_leptoneta=ROOT.TH1F("lepton_eta", f'{self.title};leading lepton Eta ;a.u.', 50, -5, 5)
@@ -75,7 +75,7 @@ class ExampleHistograms(Analysis.Histograms):
         self.hist_semilep_bg_systemMass=ROOT.TH1F("system_mass", f'{self.title}:system mass [Gev];a.u. ', 250, 0, 10000)
         self.hist_semilep_bg_systemphi=ROOT.TH1F("system_phi", f'{self.title};system phi [rad];a.u.', 50, -5, 5)
         self.hist_semilep_bg_systemeta=ROOT.TH1F("system_eta", f'{self.title}:system eta ;a.u. ', 50, -5, 5)
-        """
+        
         
 
         """
@@ -179,11 +179,12 @@ class ExampleHistograms(Analysis.Histograms):
         
         """
         Photon induced code
-        """
-        self.hist_photoninduced_semilep_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};leading lepton p_{{T}} [GeV];a.u.', 250, 0, 150)
+        
+        
+        self.hist_photoninduced_semilep_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};leading lepton p_{{T}} [GeV];a.u.', 250, 0, 10000)
         self.hist_photoninduced_semilep_leptoneta=ROOT.TH1F("lepton_eta", f'{self.title};leading lepton Eta;a.u.', 50, -5, 5)
         self.hist_photoninduced_semilep_leptonphi=ROOT.TH1F("lepton_phi", f'{self.title};leading lepton Phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_leptonMt=ROOT.TH1F("lepton_Mt", f'{self.title};leading lepton Mt [Gev];a.u.', 250, 0, 10000)
+        self.hist_photoninduced_semilep_leptonMt=ROOT.TH1F("lepton_Mt", f'{self.title};leading lepton Mt [Gev];a.u.', 120, 0, 1000)
         #self.hist_muon1Pt=ROOT.TH1F("muon1_pt", f'{self.title};subleading muon p_{{T}} [GeV];a.u.', 50, 0, 5000)
         
         #self.hist_photoninduced_semilep_jet1Pt=ROOT.TH1F("jet1_pt", f'{self.title};leading jet p_{{T}} [GeV];a.u.', 250, 0, 1000)
@@ -196,32 +197,32 @@ class ExampleHistograms(Analysis.Histograms):
         #self.hist_photoninduced_semilep_jet2phi=ROOT.TH1F("jet2_phi", f'{self.title};subleading jet2Phi;a.u.', 50, -5, 5)
         #self.hist_photoninduced_semilep_jet2Mt=ROOT.TH1F("jet2_Mt", f'{self.title};subleading Jet2 Mt [Gev];a.u.', 50, 0, 300)
         
-        self.hist_photoninduced_semilep_fatjetPt=ROOT.TH1F("fatjet_pt", f'{self.title};fat jet p_{{T}} [GeV];a.u.', 200, 0, 1000)
+        self.hist_photoninduced_semilep_fatjetPt=ROOT.TH1F("fatjet_pt", f'{self.title};fat jet p_{{T}} [GeV];a.u.', 70, 0, 1000)
         self.hist_photoninduced_semilep_fatjeteta=ROOT.TH1F("fatjet_eta", f'{self.title};fat jet Eta;a.u.', 50, -5, 5)
         self.hist_photoninduced_semilep_fatjetphi=ROOT.TH1F("fatjet_phi", f'{self.title};fat jet Phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_fatjetMt=ROOT.TH1F("fatjet_Mt", f'{self.title};fat jet Mt [Gev];a.u.', 50, 0, 300)
+        self.hist_photoninduced_semilep_fatjetMt=ROOT.TH1F("fatjet_Mt", f'{self.title};fat jet Mt [Gev];a.u.', 70, 0, 1000)
         
         #self.hist_missingETPt=ROOT.TH1F("missingET_pt", f'{self.title};leading missingET p_{{T}} [GeV];a.u.', 50, 0, 5000)
         self.hist_photoninduced_semilep_missingETeta=ROOT.TH1F("missingET_eta", f'{self.title};leading missingET Eta;a.u.', 50, -5, 5)
         self.hist_photoninduced_semilep_missingETphi=ROOT.TH1F("missingET_phi", f'{self.title};leading missingET Phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_missingETMt=ROOT.TH1F("missingET_Mt", f'{self.title};leading missingET Mt [Gev];a.u.', 50, 0, 10000)
+        self.hist_photoninduced_semilep_missingETMt=ROOT.TH1F("missingET_Mt", f'{self.title};leading missingET Mt [Gev];a.u.', 70, 0, 1000)
 
         #self.hist_dimuonPt=ROOT.TH1F("dimuon_pt", f'{self.title};di-muon p_{{T}} [GeV];a.u.', 100, 0, 5000)
-        #self.hist_photoninduced_semilep_systemPt=ROOT.TH1F("system_pt", f'{self.title};system p_{{T}} [GeV];a.u.', 50, 0, 1000)
-        #self.hist_photoninduced_semilep_systemMass=ROOT.TH1F("system_mass", f'{self.title}:system mass [Gev];a.u. ', 250, 0, 11000)
-        #self.hist_photoninduced_semilep_systemphi=ROOT.TH1F("system_phi", f'{self.title};system phi;a.u.', 50, -5, 5)
-        #self.hist_photoninduced_semilep_systemeta=ROOT.TH1F("system_eta", f'{self.title}:system eta;a.u. ', 50, -5, 5)
+        self.hist_photoninduced_semilep_systemPt=ROOT.TH1F("system_pt", f'{self.title};system p_{{T}} [GeV];a.u.', 50, 0, 1000)
+        self.hist_photoninduced_semilep_systemMass=ROOT.TH1F("system_mass", f'{self.title}:system mass [Gev];a.u. ', 70, 0, 11000)
+        self.hist_photoninduced_semilep_systemphi=ROOT.TH1F("system_phi", f'{self.title};system phi;a.u.', 50, -5, 5)
+        self.hist_photoninduced_semilep_systemeta=ROOT.TH1F("system_eta", f'{self.title}:system eta;a.u. ', 50, -5, 5)
         
         #self.hist_photoninduced_semilep_total_jetPt=ROOT.TH1F("combinedjets_pt", f'{self.title};combined jets p_{{T}} [GeV];a.u.', 250, 0, 10000)
         #self.hist_photoninduced_semilep_total_jeteta=ROOT.TH1F("combinedjets_eta", f'{self.title};combined jets Eta;a.u.', 50, -5, 5)
         #self.hist_photoninduced_semilep_total_jetphi=ROOT.TH1F("combinedjets_phi", f'{self.title};combined jets Phi;a.u.', 50, -5, 5)
         #self.hist_photoninduced_semilep_total_jetMt=ROOT.TH1F("combinedjets_Mt", f'{self.title};combined jets Mt [Gev];a.u.', 50, 0, 11000)
         
-        self.hist_photoninduced_semilep_leptonic_channelPt=ROOT.TH1F("l_vl_pt", f'{self.title};l and v p_{{T}} [GeV];a.u.', 250, 0, 1000)
+        self.hist_photoninduced_semilep_leptonic_channelPt=ROOT.TH1F("l_vl_pt", f'{self.title};l and v p_{{T}} [GeV];a.u.', 120, 0, 1000)
         self.hist_photoninduced_semilep_leptonic_channeleta=ROOT.TH1F("l_vl_eta", f'{self.title};l and v Eta;a.u.', 50, -5, 5)
         self.hist_photoninduced_semilep_leptonic_channelphi=ROOT.TH1F("l_vl_phi", f'{self.title};l and v Phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_leptonic_channelMt=ROOT.TH1F("l_vl_Mt", f'{self.title};l and v Mt [Gev];a.u.', 50, 0, 200)
-        
+        self.hist_photoninduced_semilep_leptonic_channelMt=ROOT.TH1F("l_vl_Mt", f'{self.title};l and v Mt [Gev];a.u.', 50, 0, 1000)
+        """
         
     def fill_histograms(self, sample):
         """
@@ -283,7 +284,7 @@ class ExampleHistograms(Analysis.Histograms):
         
         """
         semi leptonic background
-        
+        """
         
         if len(sample.Muon)==0:
             lepton = sample.Electron[0].P4() 
@@ -313,7 +314,7 @@ class ExampleHistograms(Analysis.Histograms):
         self.hist_semilep_bg_systemMass.Fill(system.M())
         self.hist_semilep_bg_systemeta.Fill(system.Eta())
         self.hist_semilep_bg_systemphi.Fill(system.Phi())
-        """
+        
         
         """
         Leptonic code
@@ -462,7 +463,7 @@ class ExampleHistograms(Analysis.Histograms):
         
         """
         Photon induced code
-        """
+        
         
         if len(sample.Muon)==1:
             lepton = sample.Muon[0].P4()
@@ -499,12 +500,12 @@ class ExampleHistograms(Analysis.Histograms):
         self.hist_photoninduced_semilep_missingETphi.Fill(sample.MissingET[0].Phi)
         self.hist_photoninduced_semilep_missingETMt.Fill(sample.MissingET[0].MET)
         
-        #w = sample.FatJet[0].P4()
-        #system = w + lepton + sample.MissingET[0].P4()
-        #self.hist_photoninduced_semilep_systemPt.Fill(system.Pt())
-        #self.hist_photoninduced_semilep_systemMass.Fill(system.M())
-        #self.hist_photoninduced_semilep_systemeta.Fill(system.Eta())
-        #self.hist_photoninduced_semilep_systemphi.Fill(system.Phi())
+        w = sample.FatJet[0].P4()
+        system = w + lepton + sample.MissingET[0].P4()
+        self.hist_photoninduced_semilep_systemPt.Fill(system.Pt())
+        self.hist_photoninduced_semilep_systemMass.Fill(system.M())
+        self.hist_photoninduced_semilep_systemeta.Fill(system.Eta())
+        self.hist_photoninduced_semilep_systemphi.Fill(system.Phi())
         
         #total_jet = sample.Jet[0].P4() + sample.Jet[1].P4()
         #self.hist_photoninduced_semilep_total_jetPt.Fill(total_jet.Pt())
@@ -517,7 +518,7 @@ class ExampleHistograms(Analysis.Histograms):
         self.hist_photoninduced_semilep_leptonic_channelMt.Fill(leptonic_channel.M())
         self.hist_photoninduced_semilep_leptonic_channeleta.Fill(leptonic_channel.Eta())
         self.hist_photoninduced_semilep_leptonic_channelphi.Fill(leptonic_channel.Phi())
-        
+        """
         
 class ExampleAnalysis(Analysis.Analysis):
     """
@@ -527,17 +528,17 @@ class ExampleAnalysis(Analysis.Analysis):
         super(ExampleAnalysis, self).__init__(ExampleHistograms)
 
     def selection(self, sample):
-        if len(sample.Muon)>0 or len(sample.Electron)>0:
-            return True
-        return False
-    
-        if len(sample.FatJet) == 1:
-            return True
-        return False
-        
-        #if (len(sample.Muon)+len(sample.Electron))>=1:
+        #if len(sample.Muon)>0 or len(sample.Electron)>0:
             #return True
         #return False
+    
+        #if len(sample.FatJet) == 1:
+            #return True
+        #return False
+        
+        if (len(sample.Muon)+len(sample.Electron))>=1:
+            return True
+        return False
     
         #if (len(sample.Muon) + len(sample.Electron))>=2:
             #return True
