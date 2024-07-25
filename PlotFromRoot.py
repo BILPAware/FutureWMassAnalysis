@@ -97,6 +97,25 @@ def plot_and_save_TH2(hname, *args):
         # Save the canvas as a PNG file
         c.SaveAs(f'{hname}_{histobj.title}.png')
 
+def write_to_root(*args):                                                                                                                                                          
+    """                                                                                                                                                                                      
+    Writes all histograms in a common root file                                                                                                                                              
+    writes seperate histograms for each W mass                                                                                                                                               
+    this root file will be the input for the chi2 test                                                                                                                                       
+    """ 
+    f = ROOT.TFile("histograms.root","RECREATE")
+
+    for hobj in args:
+
+        hnames=filter(lambda key: key.startswith('hist'), dir(hobj))
+        
+        for hname in hnames:
+            hist=getattr(hobj,hname)
+            hobjname=hobj.title
+            hobjname=hobjname.replace(" GeV","")
+            hist.Write(f"{hname}_{hobjname}")    
+    f.Close()
+    
 def plot_and_save(*args, ratio=None):
     """
     Creates a THStack to overlay the histograms inside `*args, draws the
@@ -153,7 +172,10 @@ def main(runconfig_path, nevents=-1):
 
     hists=map(partial(analysis.run, nevents=nevents), samples)
 
-    plot_and_save(*list(hists), ratio=runcfg.get('ratio', None))
+    hists_list = list(hists)
+
+    write_to_root(*hists_list)
+    plot_and_save(*hists_list, ratio=runcfg.get('ratio', None))
 
 if __name__ == "__main__":
     # Set up argument parser
