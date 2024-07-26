@@ -39,12 +39,12 @@ for hist_name in histograms_to_compare:
          print(f" Histogram 'hist_{distribution_for_test}_{hist_name}' not found in file")
          continue
          
-    chi2 = nominal_hist.Chi2Test(hist, "CHI2/NDF")
-    p_value = nominal_hist.Chi2Test(hist, "P")
+    chi2 = nominal_hist.Chi2Test(hist, "WW CHI2")
+    p_value = nominal_hist.Chi2Test(hist, "WW P")
 
     # Print results                                                                                                                                                                       
     print(f"Comparing nominal histogram (hist_{distribution_for_test}_{nominal_hist_name}) with 'hist_{distribution_for_test}_{hist_name}':")
-    print(f"Chi2/NDF: {chi2}")
+    print(f"Chi2: {chi2}")
     print(f"p-value: {p_value}")
     
 # Close the file                                                                                                                                                                              
