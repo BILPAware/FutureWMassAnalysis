@@ -38,23 +38,22 @@ with open(output_csv, 'w', newline='') as csvfile:
     # Write CSV header
     csvwriter.writerow(['W mass', 'Chi2'])
     
-# Loop over all histograms you want to compare nominal to
-for hist_name in histograms_to_compare:
-    hist = file.Get(f"hist_{distribution_for_test}_{hist_name}")
-
-    if not hist:
-         print(f" Histogram 'hist_{distribution_for_test}_{hist_name}' not found in file")
-         continue
+    # Loop over all histograms you want to compare nominal to
+    for hist_name in histograms_to_compare:
+        hist = file.Get(f"hist_{distribution_for_test}_{hist_name}")
+        
+        if not hist:
+            print(f" Histogram 'hist_{distribution_for_test}_{hist_name}' not found in file")
+            continue
          
-    chi2 = nominal_hist.Chi2Test(hist, "WW CHI2")
-    p_value = nominal_hist.Chi2Test(hist, "WW P")
-
-    csvwriter.writerow([hist_name, chi2])
-    # Print results                                                                                                                                                                       
-    print(f"Comparing nominal histogram (hist_{distribution_for_test}_{nominal_hist_name}) with 'hist_{distribution_for_test}_{hist_name}':")
-    print(f"Chi2: {chi2}")
-    print(f"p-value: {p_value}")
-
+        chi2 = nominal_hist.Chi2Test(hist, "WW CHI2")
+        p_value = nominal_hist.Chi2Test(hist, "WW P")
+        
+        csvwriter.writerow([hist_name, chi2])
+        # Print results                                                                                                                                                                       
+        print(f"Comparing nominal histogram (hist_{distribution_for_test}_{nominal_hist_name}) with 'hist_{distribution_for_test}_{hist_name}':")
+        print(f"Chi2: {chi2}")
+        print(f"p-value: {p_value}")
         
 # Close the file                                                                                                                                                                              
 file.Close()
