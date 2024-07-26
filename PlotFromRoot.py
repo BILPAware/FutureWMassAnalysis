@@ -145,6 +145,7 @@ def main(runconfig_path, nevents=-1):
             # Add file to the sample
             sample.add_file(p)
         sample.style=input.get('style', {})
+        sample.crosssection=input.get('crosssection', 1)
         sample.open()
 
         samples.append(sample)

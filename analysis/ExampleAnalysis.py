@@ -8,54 +8,54 @@ class ExampleHistograms(Analysis.Histograms):
         semi leptonic code
         
         
-        self.hist_semilep_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};leading lepton p_{{T}} [GeV];a.u.', 250, 0, 10000)
-        self.hist_semilep_leptoneta=ROOT.TH1F("lepton_eta", f'{self.title};leading lepton Eta;a.u.', 50, -5, 5)
-        self.hist_semilep_leptonphi=ROOT.TH1F("lepton_phi", f'{self.title};leading lepton Phi;a.u.', 50, -5, 5)
-        self.hist_semilep_leptonMt=ROOT.TH1F("lepton_Mt", f'{self.title};leading lepton Mt [Gev];a.u.', 250, 0, 10000)
+        #self.hist_semilep_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};leading lepton p_{{T}} [GeV];a.u.', 250, 0, 10000)
+        #self.hist_semilep_leptoneta=ROOT.TH1F("lepton_eta", f'{self.title};leading lepton Eta;a.u.', 50, -5, 5)
+        #self.hist_semilep_leptonphi=ROOT.TH1F("lepton_phi", f'{self.title};leading lepton Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_leptonMt=ROOT.TH1F("lepton_Mt", f'{self.title};leading lepton Mt [Gev];a.u.', 250, 0, 10000)
         #self.hist_muon1Pt=ROOT.TH1F("muon1_pt", f'{self.title};subleading muon p_{{T}} [GeV];a.u.', 50, 0, 5000)
         
-        self.hist_semilep_jet1Pt=ROOT.TH1F("jet1_pt", f'{self.title};leading jet p_{{T}} [GeV];a.u.', 250, 0, 10000)
-        self.hist_semilep_jet1eta=ROOT.TH1F("jet1_eta", f'{self.title};leading jet Eta;a.u.', 50, -5, 5)
-        self.hist_semilep_jet1phi=ROOT.TH1F("jet1_phi", f'{self.title};leading jet Phi;a.u.', 50, -5, 5)
-        self.hist_semilep_jet1Mt=ROOT.TH1F("jet1_Mt", f'{self.title};leading Jet Mt [Gev];a.u.', 50, 0, 300)
+        #self.hist_semilep_jet1Pt=ROOT.TH1F("jet1_pt", f'{self.title};leading jet p_{{T}} [GeV];a.u.', 250, 0, 10000)
+        #self.hist_semilep_jet1eta=ROOT.TH1F("jet1_eta", f'{self.title};leading jet Eta;a.u.', 50, -5, 5)
+        #self.hist_semilep_jet1phi=ROOT.TH1F("jet1_phi", f'{self.title};leading jet Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_jet1Mt=ROOT.TH1F("jet1_Mt", f'{self.title};leading Jet Mt [Gev];a.u.', 50, 0, 300)
         
-        self.hist_semilep_jet2Pt=ROOT.TH1F("jet2_pt", f'{self.title};subleading jet2 p_{{T}} [GeV];a.u.', 250, 0, 10000)
-        self.hist_semilep_jet2eta=ROOT.TH1F("jet2_eta", f'{self.title};subleading jet2 Eta;a.u.', 75, -10, 10)
-        self.hist_semilep_jet2phi=ROOT.TH1F("jet2_phi", f'{self.title};subleading jet2Phi;a.u.', 50, -5, 5)
-        self.hist_semilep_jet2Mt=ROOT.TH1F("jet2_Mt", f'{self.title};subleading Jet2 Mt [Gev];a.u.', 50, 0, 300)
+        #self.hist_semilep_jet2Pt=ROOT.TH1F("jet2_pt", f'{self.title};subleading jet2 p_{{T}} [GeV];a.u.', 250, 0, 10000)
+        #self.hist_semilep_jet2eta=ROOT.TH1F("jet2_eta", f'{self.title};subleading jet2 Eta;a.u.', 75, -10, 10)
+        #self.hist_semilep_jet2phi=ROOT.TH1F("jet2_phi", f'{self.title};subleading jet2Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_jet2Mt=ROOT.TH1F("jet2_Mt", f'{self.title};subleading Jet2 Mt [Gev];a.u.', 50, 0, 300)
         
-        self.hist_semilep_fatjetPt=ROOT.TH1F("fatjet_pt", f'{self.title};fat jet p_{{T}} [GeV];a.u.', 200, 0, 10000)
-        self.hist_semilep_fatjeteta=ROOT.TH1F("fatjet_eta", f'{self.title};fat jet Eta;a.u.', 50, -5, 5)
-        self.hist_semilep_fatjetphi=ROOT.TH1F("fatjet_phi", f'{self.title};fat jet Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_fatjetPt=ROOT.TH1F("fatjet_pt", f'{self.title};fat jet p_{{T}} [GeV];a.u.', 200, 0, 10000)
+        #self.hist_semilep_fatjeteta=ROOT.TH1F("fatjet_eta", f'{self.title};fat jet Eta;a.u.', 50, -5, 5)
+        #self.hist_semilep_fatjetphi=ROOT.TH1F("fatjet_phi", f'{self.title};fat jet Phi;a.u.', 50, -5, 5)
         self.hist_semilep_fatjetMt=ROOT.TH1F("fatjet_Mt", f'{self.title};fat jet Mt [Gev];a.u.', 50, 0, 300)
         
         #self.hist_missingETPt=ROOT.TH1F("missingET_pt", f'{self.title};leading missingET p_{{T}} [GeV];a.u.', 50, 0, 5000)
-        self.hist_semilep_missingETeta=ROOT.TH1F("missingET_eta", f'{self.title};leading missingET Eta;a.u.', 50, -5, 5)
-        self.hist_semilep_missingETphi=ROOT.TH1F("missingET_phi", f'{self.title};leading missingET Phi;a.u.', 50, -5, 5)
-        self.hist_semilep_missingETMt=ROOT.TH1F("missingET_Mt", f'{self.title};leading missingET Mt [Gev];a.u.', 50, 0, 10000)
+        #self.hist_semilep_missingETeta=ROOT.TH1F("missingET_eta", f'{self.title};leading missingET Eta;a.u.', 50, -5, 5)
+        #self.hist_semilep_missingETphi=ROOT.TH1F("missingET_phi", f'{self.title};leading missingET Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_missingETMt=ROOT.TH1F("missingET_Mt", f'{self.title};leading missingET Mt [Gev];a.u.', 50, 0, 10000)
 
         #self.hist_dimuonPt=ROOT.TH1F("dimuon_pt", f'{self.title};di-muon p_{{T}} [GeV];a.u.', 100, 0, 5000)
-        self.hist_semilep_systemPt=ROOT.TH1F("system_pt", f'{self.title};system p_{{T}} [GeV];a.u.', 50, 0, 200)
-        self.hist_semilep_systemMass=ROOT.TH1F("system_mass", f'{self.title}:system mass [Gev];a.u. ', 250, 0, 11000)
-        self.hist_semilep_systemphi=ROOT.TH1F("system_phi", f'{self.title};system phi;a.u.', 50, -5, 5)
-        self.hist_semilep_systemeta=ROOT.TH1F("system_eta", f'{self.title}:system eta;a.u. ', 50, -5, 5)
+        #self.hist_semilep_systemPt=ROOT.TH1F("system_pt", f'{self.title};system p_{{T}} [GeV];a.u.', 50, 0, 200)
+        #self.hist_semilep_systemMass=ROOT.TH1F("system_mass", f'{self.title}:system mass [Gev];a.u. ', 250, 0, 11000)
+        #self.hist_semilep_systemphi=ROOT.TH1F("system_phi", f'{self.title};system phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_systemeta=ROOT.TH1F("system_eta", f'{self.title}:system eta;a.u. ', 50, -5, 5)
         
-        self.hist_semilep_total_jetPt=ROOT.TH1F("combinedjets_pt", f'{self.title};combined jets p_{{T}} [GeV];a.u.', 250, 0, 10000)
-        self.hist_semilep_total_jeteta=ROOT.TH1F("combinedjets_eta", f'{self.title};combined jets Eta;a.u.', 50, -5, 5)
-        self.hist_semilep_total_jetphi=ROOT.TH1F("combinedjets_phi", f'{self.title};combined jets Phi;a.u.', 50, -5, 5)
-        self.hist_semilep_total_jetMt=ROOT.TH1F("combinedjets_Mt", f'{self.title};combined jets Mt [Gev];a.u.', 50, 0, 11000)
+        #self.hist_semilep_total_jetPt=ROOT.TH1F("combinedjets_pt", f'{self.title};combined jets p_{{T}} [GeV];a.u.', 250, 0, 10000)
+        #self.hist_semilep_total_jeteta=ROOT.TH1F("combinedjets_eta", f'{self.title};combined jets Eta;a.u.', 50, -5, 5)
+        #self.hist_semilep_total_jetphi=ROOT.TH1F("combinedjets_phi", f'{self.title};combined jets Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_total_jetMt=ROOT.TH1F("combinedjets_Mt", f'{self.title};combined jets Mt [Gev];a.u.', 50, 0, 11000)
         
-        self.hist_semilep_leptonic_channelPt=ROOT.TH1F("l_vl_pt", f'{self.title};l and v p_{{T}} [GeV];a.u.', 250, 0, 10000)
-        self.hist_semilep_leptonic_channeleta=ROOT.TH1F("l_vl_eta", f'{self.title};l and v Eta;a.u.', 50, -5, 5)
-        self.hist_semilep_leptonic_channelphi=ROOT.TH1F("l_vl_phi", f'{self.title};l and v Phi;a.u.', 50, -5, 5)
-        self.hist_semilep_leptonic_channelMt=ROOT.TH1F("l_vl_Mt", f'{self.title};l and v Mt [Gev];a.u.', 50, 0, 200)
+        #self.hist_semilep_leptonic_channelPt=ROOT.TH1F("l_vl_pt", f'{self.title};l and v p_{{T}} [GeV];a.u.', 250, 0, 10000)
+        #self.hist_semilep_leptonic_channeleta=ROOT.TH1F("l_vl_eta", f'{self.title};l and v Eta;a.u.', 50, -5, 5)
+        #self.hist_semilep_leptonic_channelphi=ROOT.TH1F("l_vl_phi", f'{self.title};l and v Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_leptonic_channelMt=ROOT.TH1F("l_vl_Mt", f'{self.title};l and v Mt [Gev];a.u.', 50, 0, 200)
         
         #self.hist_2d_ploteta=ROOT.TH2F("lepton_against_jet", f'{self.title};l and j [Gev];a.u.', 50, -5, 5)
         """
         
         """
         semi leptonic background
-        """
+        
         
         self.hist_semilep_bg_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};leading lepton p_{{T}} [GeV];a.u.', 250, 0, 10000)
         self.hist_semilep_bg_leptoneta=ROOT.TH1F("lepton_eta", f'{self.title};leading lepton Eta ;a.u.', 50, -5, 5)
@@ -76,7 +76,7 @@ class ExampleHistograms(Analysis.Histograms):
         self.hist_semilep_bg_systemMass=ROOT.TH1F("system_mass", f'{self.title}:system mass [Gev];a.u. ', 250, 0, 10000)
         self.hist_semilep_bg_systemphi=ROOT.TH1F("system_phi", f'{self.title};system phi [rad];a.u.', 50, -5, 5)
         self.hist_semilep_bg_systemeta=ROOT.TH1F("system_eta", f'{self.title}:system eta ;a.u. ', 50, -5, 5)
-        
+        """
         
 
         """
@@ -180,12 +180,12 @@ class ExampleHistograms(Analysis.Histograms):
         
         """
         Photon induced code
+        """
         
-        
-        self.hist_photoninduced_semilep_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};leading lepton p_{{T}} [GeV];a.u.', 250, 0, 10000)
-        self.hist_photoninduced_semilep_leptoneta=ROOT.TH1F("lepton_eta", f'{self.title};leading lepton Eta;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_leptonphi=ROOT.TH1F("lepton_phi", f'{self.title};leading lepton Phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_leptonMt=ROOT.TH1F("lepton_Mt", f'{self.title};leading lepton Mt [Gev];a.u.', 120, 0, 1000)
+        #self.hist_photoninduced_semilep_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};leading lepton p_{{T}} [GeV];a.u.', 250, 0, 10000)
+        #self.hist_photoninduced_semilep_leptoneta=ROOT.TH1F("lepton_eta", f'{self.title};leading lepton Eta;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_leptonphi=ROOT.TH1F("lepton_phi", f'{self.title};leading lepton Phi;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_leptonMt=ROOT.TH1F("lepton_Mt", f'{self.title};leading lepton Mt [Gev];a.u.', 120, 0, 1000)
         #self.hist_muon1Pt=ROOT.TH1F("muon1_pt", f'{self.title};subleading muon p_{{T}} [GeV];a.u.', 50, 0, 5000)
         
         #self.hist_photoninduced_semilep_jet1Pt=ROOT.TH1F("jet1_pt", f'{self.title};leading jet p_{{T}} [GeV];a.u.', 250, 0, 1000)
@@ -198,31 +198,78 @@ class ExampleHistograms(Analysis.Histograms):
         #self.hist_photoninduced_semilep_jet2phi=ROOT.TH1F("jet2_phi", f'{self.title};subleading jet2Phi;a.u.', 50, -5, 5)
         #self.hist_photoninduced_semilep_jet2Mt=ROOT.TH1F("jet2_Mt", f'{self.title};subleading Jet2 Mt [Gev];a.u.', 50, 0, 300)
         
-        self.hist_photoninduced_semilep_fatjetPt=ROOT.TH1F("fatjet_pt", f'{self.title};fat jet p_{{T}} [GeV];a.u.', 70, 0, 1000)
-        self.hist_photoninduced_semilep_fatjeteta=ROOT.TH1F("fatjet_eta", f'{self.title};fat jet Eta;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_fatjetphi=ROOT.TH1F("fatjet_phi", f'{self.title};fat jet Phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_fatjetMt=ROOT.TH1F("fatjet_Mt", f'{self.title};fat jet Mt [Gev];a.u.', 70, 0, 1000)
+        #self.hist_photoninduced_semilep_fatjetPt=ROOT.TH1F("fatjet_pt", f'{self.title};fat jet p_{{T}} [GeV];a.u.', 70, 0, 1000)
+        #self.hist_photoninduced_semilep_fatjeteta=ROOT.TH1F("fatjet_eta", f'{self.title};fat jet Eta;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_fatjetphi=ROOT.TH1F("fatjet_phi", f'{self.title};fat jet Phi;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_fatjetMt=ROOT.TH1F("fatjet_Mt", f'{self.title};fat jet Mt [Gev];a.u.', 70, 0, 1000)
         
         #self.hist_missingETPt=ROOT.TH1F("missingET_pt", f'{self.title};leading missingET p_{{T}} [GeV];a.u.', 50, 0, 5000)
-        self.hist_photoninduced_semilep_missingETeta=ROOT.TH1F("missingET_eta", f'{self.title};leading missingET Eta;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_missingETphi=ROOT.TH1F("missingET_phi", f'{self.title};leading missingET Phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_missingETMt=ROOT.TH1F("missingET_Mt", f'{self.title};leading missingET Mt [Gev];a.u.', 70, 0, 1000)
+        #self.hist_photoninduced_semilep_missingETeta=ROOT.TH1F("missingET_eta", f'{self.title};leading missingET Eta;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_missingETphi=ROOT.TH1F("missingET_phi", f'{self.title};leading missingET Phi;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_missingETMt=ROOT.TH1F("missingET_Mt", f'{self.title};leading missingET Mt [Gev];a.u.', 70, 0, 1000)
 
         #self.hist_dimuonPt=ROOT.TH1F("dimuon_pt", f'{self.title};di-muon p_{{T}} [GeV];a.u.', 100, 0, 5000)
-        self.hist_photoninduced_semilep_systemPt=ROOT.TH1F("system_pt", f'{self.title};system p_{{T}} [GeV];a.u.', 50, 0, 1000)
-        self.hist_photoninduced_semilep_systemMass=ROOT.TH1F("system_mass", f'{self.title}:system mass [Gev];a.u. ', 70, 0, 11000)
-        self.hist_photoninduced_semilep_systemphi=ROOT.TH1F("system_phi", f'{self.title};system phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_systemeta=ROOT.TH1F("system_eta", f'{self.title}:system eta;a.u. ', 50, -5, 5)
+        #self.hist_photoninduced_semilep_systemPt=ROOT.TH1F("system_pt", f'{self.title};system p_{{T}} [GeV];a.u.', 50, 0, 1000)
+        #self.hist_photoninduced_semilep_systemMass=ROOT.TH1F("system_mass", f'{self.title}:system mass [Gev];a.u. ', 70, 0, 11000)
+        #self.hist_photoninduced_semilep_systemphi=ROOT.TH1F("system_phi", f'{self.title};system phi;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_systemeta=ROOT.TH1F("system_eta", f'{self.title}:system eta;a.u. ', 50, -5, 5)
         
         #self.hist_photoninduced_semilep_total_jetPt=ROOT.TH1F("combinedjets_pt", f'{self.title};combined jets p_{{T}} [GeV];a.u.', 250, 0, 10000)
         #self.hist_photoninduced_semilep_total_jeteta=ROOT.TH1F("combinedjets_eta", f'{self.title};combined jets Eta;a.u.', 50, -5, 5)
         #self.hist_photoninduced_semilep_total_jetphi=ROOT.TH1F("combinedjets_phi", f'{self.title};combined jets Phi;a.u.', 50, -5, 5)
-        #self.hist_photoninduced_semilep_total_jetMt=ROOT.TH1F("combinedjets_Mt", f'{self.title};combined jets Mt [Gev];a.u.', 50, 0, 11000)
+        self.hist_photoninduced_semilep_total_jetMt=ROOT.TH1F("combinedjets_Mt", f'{self.title};combined jets Mt [Gev];a.u.', 50, 0, 200)
         
-        self.hist_photoninduced_semilep_leptonic_channelPt=ROOT.TH1F("l_vl_pt", f'{self.title};l and v p_{{T}} [GeV];a.u.', 120, 0, 1000)
-        self.hist_photoninduced_semilep_leptonic_channeleta=ROOT.TH1F("l_vl_eta", f'{self.title};l and v Eta;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_leptonic_channelphi=ROOT.TH1F("l_vl_phi", f'{self.title};l and v Phi;a.u.', 50, -5, 5)
-        self.hist_photoninduced_semilep_leptonic_channelMt=ROOT.TH1F("l_vl_Mt", f'{self.title};l and v Mt [Gev];a.u.', 50, 0, 1000)
+        #self.hist_photoninduced_semilep_leptonic_channelPt=ROOT.TH1F("l_vl_pt", f'{self.title};l and v p_{{T}} [GeV];a.u.', 120, 0, 1000)
+        #self.hist_photoninduced_semilep_leptonic_channeleta=ROOT.TH1F("l_vl_eta", f'{self.title};l and v Eta;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_leptonic_channelphi=ROOT.TH1F("l_vl_phi", f'{self.title};l and v Phi;a.u.', 50, -5, 5)
+        #self.hist_photoninduced_semilep_leptonic_channelMt=ROOT.TH1F("l_vl_Mt", f'{self.title};l and v Mt [Gev];a.u.', 50, 0, 1000)
+        
+        
+        """
+        3 plots
+        
+        
+        #self.hist_total_leptonPt=ROOT.TH1F("lepton_pt", f'{self.title};Lepton p_{{T}} [GeV];a.u.', 150, 0, 2000)
+        #self.hist_semilep_leptoneta=ROOT.TH1F("lepton_eta", f'{self.title};Lepton Eta;a.u.', 75, -5, 5)
+        #self.hist_semilep_leptonphi=ROOT.TH1F("lepton_phi", f'{self.title};Lepton Phi;a.u.', 75, -5, 5)
+        #self.hist_total_leptonMt=ROOT.TH1F("lepton_Mt", f'{self.title};Lepton Mt [Gev];a.u.', 75, 0, 500)
+        #self.hist_semilep_leptonMtzoomed=ROOT.TH1F("lepton_Mt (zoomed)", f'{self.title};Lepton Mt [Gev](zoomed);a.u.', 50, 0, 2500)
+        
+        #self.hist_semilep_jet1Pt=ROOT.TH1F("jet1_pt", f'{self.title};Leading Jet p_{{T}} [GeV];a.u.', 150, 0, 10000)
+        #self.hist_semilep_jet1eta=ROOT.TH1F("jet1_eta", f'{self.title};Leading Jet Eta;a.u.', 50, -5, 5)
+        #self.hist_semilep_jet1phi=ROOT.TH1F("jet1_phi", f'{self.title};Leading Jet Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_jet1Mt=ROOT.TH1F("jet1_Mt", f'{self.title};Leading Jet Mass [Gev];a.u.', 250, 0, 300)
+        
+        #self.hist_semilep_jet2Pt=ROOT.TH1F("jet2_pt", f'{self.title};Subleading Jet p_{{T}} [GeV];a.u.', 150, 0, 10000)
+        #self.hist_semilep_jet2eta=ROOT.TH1F("jet2_eta", f'{self.title};Subleading Jet Eta;a.u.', 75, -10, 10)
+        #self.hist_semilep_jet2phi=ROOT.TH1F("jet2_phi", f'{self.title};Subleading Jet Phi;a.u.', 50, -5, 5)
+        #self.hist_semilep_jet2Mt=ROOT.TH1F("jet2_Mt", f'{self.title};Subleading Jet Mass [Gev];a.u.', 75, 40, 150)
+        
+        #self.hist_total_fatjetPt=ROOT.TH1F("fatjet_pt", f'{self.title};Fat Jet p_{{T}} [GeV];a.u.', 150, 0, 2000)
+        #self.hist_semilep_fatjeteta=ROOT.TH1F("fatjet_eta", f'{self.title};Fat Jet Eta;a.u.', 50, -5, 5)
+        #self.hist_semilep_fatjetphi=ROOT.TH1F("fatjet_phi", f'{self.title};Fat Jet Phi;a.u.', 50, -5, 5)
+        #self.hist_total_fatjetMt=ROOT.TH1F("fatjet_Mt", f'{self.title};Fat Jet Mass [Gev];a.u.', 50, 40, 130)
+        
+        #self.hist_semilep_missingETeta=ROOT.TH1F("missingET_eta", f'{self.title};MissingET Eta;a.u.', 75, -5, 5)
+        #self.hist_semilep_missingETphi=ROOT.TH1F("missingET_phi", f'{self.title};MissingET Phi;a.u.', 75, -5, 5)
+        #self.hist_total_missingETMt=ROOT.TH1F("missingET_Mt", f'{self.title};MissingET Mt [Gev];a.u.', 100, 0, 500)
+        #self.hist_semilep_missingETMtzoomed=ROOT.TH1F("missingET_Mt (zoomed)", f'{self.title};MissingET Mt [Gev] (zoomed);a.u.', 120, 0, 200)
+
+        #self.hist_total_systemPt=ROOT.TH1F("system_pt", f'{self.title};System p_{{T}} [GeV];a.u.', 50, 0, 30)
+        #self.hist_total_systemMass=ROOT.TH1F("system_mass", f'{self.title};System mass [Gev];a.u. ', 150, 0, 12000)
+        #self.hist_semilep_systemMasszoomed=ROOT.TH1F("system_mass (zoomed)", f'{self.title};System mass (zoomed) [Gev];a.u. ', 100, 0, 2000)
+        #self.hist_semilep_systemphi=ROOT.TH1F("system_phi", f'{self.title};System phi;a.u.', 75, -5, 5)
+        #self.hist_semilep_systemeta=ROOT.TH1F("system_eta", f'{self.title};System eta;a.u. ', 75, -5, 5)
+        
+        #self.hist_semilep_total_jetPt=ROOT.TH1F("combinedjets_pt", f'{self.title};Combined Jets p_{{T}} [GeV];a.u.', 150, 0, 10000)
+        #self.hist_semilep_total_jeteta=ROOT.TH1F("combinedjets_eta", f'{self.title};Combined Jets Eta;a.u.', 75, -5, 5)
+        #self.hist_semilep_total_jetphi=ROOT.TH1F("combinedjets_phi", f'{self.title};Combined Jets Phi;a.u.', 75, -5, 5)
+        self.hist_total_total_jetMt=ROOT.TH1F("combinedjets_Mt", f'{self.title};Combined Jets Mt [Gev];a.u.', 150, 0, 11000)
+        
+        #self.hist_total_leptonic_channelPt=ROOT.TH1F("l_vl_pt", f'{self.title};Leptonic W p_{{T}} [GeV];a.u.', 150, 0, 1500)
+        #self.hist_semilep_leptonic_channeleta=ROOT.TH1F("l_vl_eta", f'{self.title};Leptonic W Eta;a.u.', 75, -5, 5)
+        #self.hist_semilep_leptonic_channelphi=ROOT.TH1F("l_vl_phi", f'{self.title};Leptonic W Phi;a.u.', 75, -5, 5)
+        #self.hist_total_leptonic_channelMt=ROOT.TH1F("l_vl_Mt", f'{self.title};Leptonic W Mass [Gev];a.u.', 50, 40, 140)
         """
         
 
@@ -237,56 +284,56 @@ class ExampleHistograms(Analysis.Histograms):
             lepton = sample.Electron[0].P4()
             
         
-        self.hist_semilep_leptonPt.Fill(lepton.Pt())
-        self.hist_semilep_leptoneta.Fill(lepton.Eta())
-        self.hist_semilep_leptonphi.Fill(lepton.Phi())
-        self.hist_semilep_leptonMt.Fill(lepton.Mt())
+        #self.hist_semilep_leptonPt.Fill(lepton.Pt())
+        #self.hist_semilep_leptoneta.Fill(lepton.Eta())
+        #self.hist_semilep_leptonphi.Fill(lepton.Phi())
+        #self.hist_semilep_leptonMt.Fill(lepton.Mt())
         
-        self.hist_semilep_jet1Pt.Fill(sample.Jet[0].PT)
-        self.hist_semilep_jet1eta.Fill(sample.Jet[0].Eta)
-        self.hist_semilep_jet1phi.Fill(sample.Jet[0].Phi)
-        self.hist_semilep_jet1Mt.Fill(sample.Jet[0].Mass)
+        #self.hist_semilep_jet1Pt.Fill(sample.Jet[0].PT)
+        #self.hist_semilep_jet1eta.Fill(sample.Jet[0].Eta)
+        #self.hist_semilep_jet1phi.Fill(sample.Jet[0].Phi)
+        #self.hist_semilep_jet1Mt.Fill(sample.Jet[0].Mass)
         
-        self.hist_semilep_jet2Pt.Fill(sample.Jet[1].PT)
-        self.hist_semilep_jet2eta.Fill(sample.Jet[1].Eta)
-        self.hist_semilep_jet2phi.Fill(sample.Jet[1].Phi)
-        self.hist_semilep_jet2Mt.Fill(sample.Jet[1].Mass)
+        #self.hist_semilep_jet2Pt.Fill(sample.Jet[1].PT)
+        #self.hist_semilep_jet2eta.Fill(sample.Jet[1].Eta)
+        #self.hist_semilep_jet2phi.Fill(sample.Jet[1].Phi)
+        #self.hist_semilep_jet2Mt.Fill(sample.Jet[1].Mass)
         
-        self.hist_semilep_fatjetPt.Fill(sample.FatJet[0].PT)
-        self.hist_semilep_fatjeteta.Fill(sample.FatJet[0].Eta)
-        self.hist_semilep_fatjetphi.Fill(sample.FatJet[0].Phi)
+        #self.hist_semilep_fatjetPt.Fill(sample.FatJet[0].PT)
+        #self.hist_semilep_fatjeteta.Fill(sample.FatJet[0].Eta)
+        #self.hist_semilep_fatjetphi.Fill(sample.FatJet[0].Phi)
         self.hist_semilep_fatjetMt.Fill(sample.FatJet[0].Mass)
         
         #self.hist_missingETPt.Fill(sample.MissingET.PT)
-        self.hist_semilep_missingETeta.Fill(sample.MissingET[0].Eta)
-        self.hist_semilep_missingETphi.Fill(sample.MissingET[0].Phi)
-        self.hist_semilep_missingETMt.Fill(sample.MissingET[0].MET)
+        #self.hist_semilep_missingETeta.Fill(sample.MissingET[0].Eta)
+        #self.hist_semilep_missingETphi.Fill(sample.MissingET[0].Phi)
+        #self.hist_semilep_missingETMt.Fill(sample.MissingET[0].MET)
         
         w = sample.FatJet[0].P4()
         system = w + lepton + sample.MissingET[0].P4()
-        self.hist_semilep_systemPt.Fill(system.Pt())
-        self.hist_semilep_systemMass.Fill(system.M())
-        self.hist_semilep_systemeta.Fill(system.Eta())
-        self.hist_semilep_systemphi.Fill(system.Phi())
+        #self.hist_semilep_systemPt.Fill(system.Pt())
+        #self.hist_semilep_systemMass.Fill(system.M())
+        #self.hist_semilep_systemeta.Fill(system.Eta())
+        #self.hist_semilep_systemphi.Fill(system.Phi())
         
         total_jet = sample.Jet[0].P4() + sample.Jet[1].P4()
-        self.hist_semilep_total_jetPt.Fill(total_jet.Pt())
-        self.hist_semilep_total_jetMt.Fill(total_jet.Mt())
-        self.hist_semilep_total_jeteta.Fill(total_jet.Eta())
-        self.hist_semilep_total_jetphi.Fill(total_jet.Phi())
+        #self.hist_semilep_total_jetPt.Fill(total_jet.Pt())
+        #self.hist_semilep_total_jetMt.Fill(total_jet.Mt())
+        #self.hist_semilep_total_jeteta.Fill(total_jet.Eta())
+        #self.hist_semilep_total_jetphi.Fill(total_jet.Phi())
         
         leptonic_channel = lepton + sample.MissingET[0].P4()
-        self.hist_semilep_leptonic_channelPt.Fill(leptonic_channel.Pt())
-        self.hist_semilep_leptonic_channelMt.Fill(leptonic_channel.M())
-        self.hist_semilep_leptonic_channeleta.Fill(leptonic_channel.Eta())
-        self.hist_semilep_leptonic_channelphi.Fill(leptonic_channel.Phi())
+        #self.hist_semilep_leptonic_channelPt.Fill(leptonic_channel.Pt())
+        #self.hist_semilep_leptonic_channelMt.Fill(leptonic_channel.M())
+        #self.hist_semilep_leptonic_channeleta.Fill(leptonic_channel.Eta())
+        #self.hist_semilep_leptonic_channelphi.Fill(leptonic_channel.Phi())
         
         #self.hist_2d_ploteta.Fill(lepton.eta(), sample.FatJet[0].eta)        
         """
         
         """
         semi leptonic background
-        """
+        
         
         if len(sample.Muon)==0:
             lepton = sample.Electron[0].P4() 
@@ -316,7 +363,7 @@ class ExampleHistograms(Analysis.Histograms):
         self.hist_semilep_bg_systemMass.Fill(system.M())
         self.hist_semilep_bg_systemeta.Fill(system.Eta())
         self.hist_semilep_bg_systemphi.Fill(system.Phi())
-        
+        """
         
         """
         Leptonic code
@@ -463,22 +510,24 @@ class ExampleHistograms(Analysis.Histograms):
         
         """
         Photon induced code
-        
+        """
         
         if len(sample.Muon)==1:
             lepton = sample.Muon[0].P4()
         else:
             lepton = sample.Electron[0].P4()
             
-        if len(sample.FatJet)==1:
-            fatjet = sample.FatJet[0].P4()
+        if len(sample.FatJet)>=1:
+            jet = sample.FatJet[0].P4()
+        elif len(sample.Jet)>=2:
+            jet = sample.Jet[0].P4() + sample.Jet[1].P4()
         else:
             return False
-        
-        self.hist_photoninduced_semilep_leptonPt.Fill(lepton.Pt())
-        self.hist_photoninduced_semilep_leptoneta.Fill(lepton.Eta())
-        self.hist_photoninduced_semilep_leptonphi.Fill(lepton.Phi())
-        self.hist_photoninduced_semilep_leptonMt.Fill(lepton.Mt())
+
+        #self.hist_photoninduced_semilep_leptonPt.Fill(lepton.Pt())
+        #self.hist_photoninduced_semilep_leptoneta.Fill(lepton.Eta())
+        #self.hist_photoninduced_semilep_leptonphi.Fill(lepton.Phi())
+        #self.hist_photoninduced_semilep_leptonMt.Fill(lepton.Mt())
         
         #self.hist_photoninduced_semilep_jet1Pt.Fill(sample.Jet[0].PT)
         #self.hist_photoninduced_semilep_jet1eta.Fill(sample.Jet[0].Eta)
@@ -490,34 +539,102 @@ class ExampleHistograms(Analysis.Histograms):
         #self.hist_photoninduced_semilep_jet2phi.Fill(sample.Jet[1].Phi)
         #self.hist_photoninduced_semilep_jet2Mt.Fill(sample.Jet[1].Mass)
         
-        self.hist_photoninduced_semilep_fatjetPt.Fill(fatjet.Pt())
-        self.hist_photoninduced_semilep_fatjeteta.Fill(fatjet.Eta())
-        self.hist_photoninduced_semilep_fatjetphi.Fill(fatjet.Phi())
-        self.hist_photoninduced_semilep_fatjetMt.Fill(fatjet.Mt())
+        #self.hist_photoninduced_semilep_fatjetPt.Fill(fatjet.Pt())
+        #self.hist_photoninduced_semilep_fatjeteta.Fill(fatjet.Eta())
+        #self.hist_photoninduced_semilep_fatjetphi.Fill(fatjet.Phi())
+        #self.hist_photoninduced_semilep_fatjetMt.Fill(fatjet.Mt())
         
         #self.hist_missingETPt.Fill(sample.MissingET.PT)
-        self.hist_photoninduced_semilep_missingETeta.Fill(sample.MissingET[0].Eta)
-        self.hist_photoninduced_semilep_missingETphi.Fill(sample.MissingET[0].Phi)
-        self.hist_photoninduced_semilep_missingETMt.Fill(sample.MissingET[0].MET)
+        #self.hist_photoninduced_semilep_missingETeta.Fill(sample.MissingET[0].Eta)
+        #self.hist_photoninduced_semilep_missingETphi.Fill(sample.MissingET[0].Phi)
+        #self.hist_photoninduced_semilep_missingETMt.Fill(sample.MissingET[0].MET)
         
-        w = sample.FatJet[0].P4()
-        system = w + lepton + sample.MissingET[0].P4()
-        self.hist_photoninduced_semilep_systemPt.Fill(system.Pt())
-        self.hist_photoninduced_semilep_systemMass.Fill(system.M())
-        self.hist_photoninduced_semilep_systemeta.Fill(system.Eta())
-        self.hist_photoninduced_semilep_systemphi.Fill(system.Phi())
+        #w = sample.FatJet[0].P4()
+        #system = w + lepton + sample.MissingET[0].P4()
+        #self.hist_photoninduced_semilep_systemPt.Fill(system.Pt())
+        #self.hist_photoninduced_semilep_systemMass.Fill(system.M())
+        #self.hist_photoninduced_semilep_systemeta.Fill(system.Eta())
+        #self.hist_photoninduced_semilep_systemphi.Fill(system.Phi())
         
         #total_jet = sample.Jet[0].P4() + sample.Jet[1].P4()
         #self.hist_photoninduced_semilep_total_jetPt.Fill(total_jet.Pt())
-        #self.hist_photoninduced_semilep_total_jetMt.Fill(total_jet.Mt())
+        self.hist_photoninduced_semilep_total_jetMt.Fill(jet.Mt())
         #self.hist_photoninduced_semilep_total_jeteta.Fill(total_jet.Eta())
         #self.hist_photoninduced_semilep_total_jetphi.Fill(total_jet.Phi())
         
         leptonic_channel = lepton + sample.MissingET[0].P4()
-        self.hist_photoninduced_semilep_leptonic_channelPt.Fill(leptonic_channel.Pt())
-        self.hist_photoninduced_semilep_leptonic_channelMt.Fill(leptonic_channel.M())
-        self.hist_photoninduced_semilep_leptonic_channeleta.Fill(leptonic_channel.Eta())
-        self.hist_photoninduced_semilep_leptonic_channelphi.Fill(leptonic_channel.Phi())
+        #self.hist_photoninduced_semilep_leptonic_channelPt.Fill(leptonic_channel.Pt())
+        #self.hist_photoninduced_semilep_leptonic_channelMt.Fill(leptonic_channel.M())
+        #self.hist_photoninduced_semilep_leptonic_channeleta.Fill(leptonic_channel.Eta())
+        #self.hist_photoninduced_semilep_leptonic_channelphi.Fill(leptonic_channel.Phi())
+        
+        
+        """
+        3 plots
+        
+        
+        if len(sample.Muon)==0:
+            lepton = sample.Electron[0].P4() 
+        elif len(sample.Electron)==0:
+            lepton = sample.Muon[0].P4() 
+        else:
+            return False
+        
+        if len(sample.FatJet)>=1:
+            jet = sample.FatJet[0].P4()
+        elif len(sample.Jet)>=2:
+            jet = sample.Jet[0].P4() + sample.Jet[1].P4()
+        else:
+            return False
+            
+        
+        #self.hist_total_leptonPt.Fill(lepton.Pt())
+        #self.hist_semilep_leptoneta.Fill(lepton.Eta())
+        #self.hist_semilep_leptonphi.Fill(lepton.Phi())
+        #self.hist_total_leptonMt.Fill(lepton.Mt())
+        #self.hist_semilep_leptonMtzoomed.Fill(lepton.Mt())
+        
+        #self.hist_semilep_jet1Pt.Fill(sample.Jet[0].PT)
+        #self.hist_semilep_jet1eta.Fill(sample.Jet[0].Eta)
+        #self.hist_semilep_jet1phi.Fill(sample.Jet[0].Phi)
+        #self.hist_semilep_jet1Mt.Fill(sample.Jet[0].Mass)
+        
+        #self.hist_semilep_jet2Pt.Fill(sample.Jet[1].PT)
+        #self.hist_semilep_jet2eta.Fill(sample.Jet[1].Eta)
+        #self.hist_semilep_jet2phi.Fill(sample.Jet[1].Phi)
+       # self.hist_semilep_jet2Mt.Fill(sample.Jet[1].Mass)
+        
+        #self.hist_total_fatjetPt.Fill(fatjet.Pt())
+        #self.hist_semilep_fatjeteta.Fill(sample.FatJet[0].Eta)
+        #self.hist_semilep_fatjetphi.Fill(sample.FatJet[0].Phi)
+        #self.hist_total_fatjetMt.Fill(fatjet.M())
+        
+        #self.hist_semilep_missingETeta.Fill(sample.MissingET[0].Eta)
+        #self.hist_semilep_missingETphi.Fill(sample.MissingET[0].Phi)
+        #self.hist_total_missingETMt.Fill(sample.MissingET[0].MET)
+        #self.hist_semilep_missingETMtzoomed.Fill(sample.MissingET[0].MET)
+        
+        w = sample.FatJet[0].P4()
+        system = w + lepton + sample.MissingET[0].P4()
+        #self.hist_total_systemPt.Fill(system.Pt())
+        #self.hist_total_systemMass.Fill(system.M())
+        #self.hist_semilep_systemMasszoomed.Fill(system.M())
+        #self.hist_semilep_systemeta.Fill(system.Eta())
+        #self.hist_semilep_systemphi.Fill(system.Phi())
+        
+        #total_jet = sample.Jet[0].P4() + sample.Jet[1].P4()
+        #self.hist_total_total_jetPt.Fill(total_jet.Pt())
+        self.hist_total_total_jetMt.Fill(jet.Mt())
+        #self.hist_semilep_total_jeteta.Fill(total_jet.Eta())
+        #self.hist_semilep_total_jetphi.Fill(total_jet.Phi())
+        
+        leptonic_channel = lepton + sample.MissingET[0].P4()
+        #self.hist_total_leptonic_channelPt.Fill(leptonic_channel.Pt())
+        #self.hist_total_leptonic_channelMt.Fill(leptonic_channel.M())
+        #self.hist_semilep_leptonic_channeleta.Fill(leptonic_channel.Eta())
+        #self.hist_semilep_leptonic_channelphi.Fill(leptonic_channel.Phi())
+        
+        #self.hist_leptonptvsleptonmt.Fill(lepton.Pt(),lepton.Mt())
         """
         
 class ExampleAnalysis(Analysis.Analysis):
@@ -528,17 +645,17 @@ class ExampleAnalysis(Analysis.Analysis):
         super(ExampleAnalysis, self).__init__(ExampleHistograms)
 
     def selection(self, sample):
-        #if len(sample.Muon)>0 or len(sample.Electron)>0:
-            #return True
-        #return False
-    
-        #if len(sample.FatJet) == 1:
-            #return True
-        #return False
-        
-        if (len(sample.Muon)+len(sample.Electron))>=1:
+        if len(sample.Muon)>0 or len(sample.Electron)>0:
             return True
         return False
+    
+        if len(sample.FatJet) == 1 or len(sample.Jet)==2:
+            return True
+        return False
+        
+        #if (len(sample.Muon)+len(sample.Electron))>=1:
+         #   return True
+        #return False
     
         #if (len(sample.Muon) + len(sample.Electron))>=2:
             #return True
