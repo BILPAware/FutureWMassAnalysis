@@ -46,8 +46,8 @@ with open(output_csv, 'w', newline='') as csvfile:
             print(f" Histogram 'hist_{distribution_for_test}_{hist_name}' not found in file")
             continue
          
-        chi2 = nominal_hist.Chi2Test(hist, "WW CHI2")
-        p_value = nominal_hist.Chi2Test(hist, "WW P")
+        chi2 = nominal_hist.Chi2Test(hist, "WW NORM CHI2")
+        p_value = nominal_hist.Chi2Test(hist, "WW NORM P")
         
         csvwriter.writerow([hist_name, chi2])
         # Print results                                                                                                                                                                       
