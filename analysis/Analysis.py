@@ -56,14 +56,26 @@ class Analysis:
         """
         return True
 
-    def run(self, sample):
+    def run(self, sample, nevents=-1):
         """
         Runs the analysis.
+
+        Parameters
+        ----------
+        sample : Analysis.Sample
+            A sample object with the currently loaded event.
+        nevents : int
+            Maximum number of events to run over. -1 means all.
         """
         histograms = self.histogrammer(sample.title, sample.style)
         histograms.create_histograms()
 
-        for idx in range(sample.reader.GetEntries()):
+        # Calculate the requested number of events
+        nevents=nevents if nevents>=0 else sample.reader.GetEntries()
+        nevents=min(sample.reader.GetEntries(),nevents)
+
+        # Loop!
+        for idx in range(nevents):
             sample.reader.ReadEntry(idx)
 
             if not self.selection(sample):
@@ -76,6 +88,8 @@ class Analysis:
             attr=getattr(histograms, attrname)
             if not isinstance(attr,ROOT.TH1):
                 continue # not a histogram
+
             attr.Scale(sample.crosssection/sample.reader.GetEntries())
+
 
         return histograms
