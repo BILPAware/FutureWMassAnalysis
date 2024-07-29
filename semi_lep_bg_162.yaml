@@ -1,0 +1,44 @@
+ratio:
+  reference: 2
+  yaxis:
+    min: 0
+    max: 0.2
+    title: ratio
+inputs:
+  - path: /disk/moose/general/FutureWMass/samples/semi_lep_amber/semi_bg_lvl_wm_162.3/Events/run_01/tag_1_delphes_events.root
+    title: single w- > q q
+    crosssection: 0.1022
+    style:
+      linecolor: kAzure
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/semi_lep_amber/semi_lep_bg_wm_162.3/Events/run_01/tag_1_delphes_events.root
+    title: single w- > l v
+    crosssection: 0.0002448
+    style:
+      linecolor: kSpring  
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/at_semi_whole_162.3_80.3692.root
+    title: signal
+    crosssection: 1.8276
+    style:
+      linecolor: kBlack
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/semi_lep_amber/semi_lep_bg_wp_162.3/Events/run_01/tag_1_delphes_events.root
+    title: single w+ > l+ v
+    crosssection: 0.0002448
+    style:
+      linecolor: kRed  
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/semi_bg_lvl_wp_162.3/Events/run_01/tag_1_delphes_events.root
+    title: single w+ > q q
+    crosssection: 0.1022
+    style:
+      linecolor: kMagenta  
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/zz_qqll_at_162.3/Events/run_01/tag_1_delphes_events.root
+    title: zz
+    crosssection: 0.0403
+    style:
+      linecolor: kOrange
+      linewidth: 2
+ 

@@ -1,0 +1,20 @@
+ratio:
+  reference: 0
+  yaxis:
+    min: 0
+    max: 0.02
+    title: ratio
+inputs:
+  - path: /disk/moose/general/FutureWMass/samples/total_had_sig_162.3_correct/Events/run_01/tag_1_delphes_events.root
+    title: hadronic signal
+    crosssection: 1.593
+    style:
+      linecolor: kAzure
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/bg_zz_qqqq_162.3/Events/run_01/tag_1_delphes_events.root
+    title: ZZ
+    crosssection: 0.05261
+    style:
+      linecolor: kPink
+      linewidth: 2
+ 

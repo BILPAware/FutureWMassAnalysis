@@ -1,0 +1,38 @@
+ratio:
+  reference: 2
+  yaxis:
+    min: 0.9
+    max: 1.1
+    title: ratio
+inputs:
+  - path: /disk/moose/general/FutureWMass/samples/at_pres_wmqq_wpvl_162.3/Events/run_01/tag_1_delphes_events.root
+    title: 79.3692 GeV
+    crosssection: 1.188
+    style:
+      linecolor: kAzure
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/at_pres_wmqq_wpvl_162.3/Events/run_02/tag_1_delphes_events.root
+    title: 80.3559 GeV
+    crosssection: 0.9184
+    style:
+      linecolor: kSpring  
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/at_pres_wmqq_wpvl_162.3/Events/run_03/tag_1_delphes_events.root
+    title: 80.3692 GeV
+    crosssection: 0.9139
+    style:
+      linecolor: kBlack
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/at_pres_wmqq_wpvl_162.3/Events/run_04/tag_1_delphes_events.root
+    title: 80.3825 GeV
+    crosssection: 0.9091
+    style:
+      linecolor: kRed  
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/at_pres_wmqq_wpvl_162.3/Events/run_05/tag_1_delphes_events.root
+    title: 81.3692 GeV
+    crosssection: 0.5418
+    style:
+      linecolor: kMagenta  
+      linewidth: 2
+ 

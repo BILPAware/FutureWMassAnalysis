@@ -1,0 +1,19 @@
+ratio:
+  reference: 1
+  yaxis:
+    min: 0
+    max: 0.2
+    title: ratio
+inputs:
+  - path: /disk/moose/general/FutureWMass/samples/zz_qqll_at_162.3/Events/run_01/tag_1_delphes_events.root
+    title: zz
+    crosssection: 0.0403
+    style:
+      linecolor: kAzure
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/at_semi_whole_162.3_80.3692.root
+    title: signal
+    crosssection: 1.8276
+    style:
+      linecolor: kBlack
+      linewidth: 2 
