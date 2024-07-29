@@ -42,11 +42,11 @@ class ExampleHistograms(Analysis.Histograms):
         
         #hadronic signal
         
-        '''self.hist_jets_hadPt=ROOT.TH1F("jets_pt", f'{self.title};Jets p_{{T}} [GeV];a.u.', 100, 0, 165)
-        self.hist_jets_hadEta=ROOT.TH1F("jets_eta", f'{self.title};Jets Eta [rad];a.u.', 100, -3.5, 3.5)
-        self.hist_jets_hadPhi=ROOT.TH1F("jets_phi", f'{self.title};Jets Phi [rad];a.u.', 100, -3.5, 3.5)
-        self.hist_jets_hadMt=ROOT.TH1F("jets_mt", f'{self.title};Jets Mass (transverse) [GeV];a.u.', 100, 0, 250)
-        self.hist_jets_hadM=ROOT.TH1F("jets_m", f'{self.title};Jets Mass [GeV];a.u.', 100, 0, 165)
+        '''self.hist_hadronic_w_hadPt=ROOT.TH1F("jets_pt", f'{self.title};Jets p_{{T}} [GeV];a.u.', 100, 0, 165)
+        self.hist_hadronic_w_hadEta=ROOT.TH1F("jets_eta", f'{self.title};Jets Eta [rad];a.u.', 100, -3.5, 3.5)
+        self.hist_hadronic_w_hadPhi=ROOT.TH1F("jets_phi", f'{self.title};Jets Phi [rad];a.u.', 100, -3.5, 3.5)
+        self.hist_hadronic_w_hadMt=ROOT.TH1F("jets_mt", f'{self.title};Jets Mass (transverse) [GeV];a.u.', 100, 0, 250)
+        self.hist_hadronic_w_hadM=ROOT.TH1F("jets_m", f'{self.title};Jets Mass [GeV];a.u.', 100, 0, 165)
         
         self.hist_jet1_hadPt=ROOT.TH1F("jet1_pt", f'{self.title};Jet1 p_{{T}} [GeV];a.u.', 100, 0, 165)
         self.hist_jet1_hadEta=ROOT.TH1F("jet1_eta", f'{self.title};Jet1 Eta [rad];a.u.', 100, -3.5, 3.5)
@@ -120,11 +120,11 @@ class ExampleHistograms(Analysis.Histograms):
         
         '''jets = sample.Jet[0].P4() +sample.Jet[2].P4() +sample.Jet[2].P4() +sample.Jet[3].P4()
         
-        self.hist_jets_hadPt.Fill(jets.Pt())
-        self.hist_jets_hadEta.Fill(jets.Eta())
-        self.hist_jets_hadPhi.Fill(jets.Phi())
-        self.hist_jets_hadMt.Fill(jets.Mt())
-        self.hist_jets_hadM.Fill(jets.M())
+        self.hist_hadronic_w_hadPt.Fill(jets.Pt())
+        self.hist_hadronic_w_hadEta.Fill(jets.Eta())
+        self.hist_hadronic_w_hadPhi.Fill(jets.Phi())
+        self.hist_hadronic_w_hadMt.Fill(jets.Mt())
+        self.hist_hadronic_w_hadM.Fill(jets.M())
         
         self.hist_jet1_hadEta.Fill(sample.Jet[0].Eta)
         self.hist_jet1_hadMt.Fill(sample.Jet[0].Mass)
