@@ -18,6 +18,7 @@ root_file_name = config['root_file']
 nominal_hist_name = config['nominal_histogram']
 distribution_for_test = config['distribution']
 histograms_to_compare = config.get('histograms_to_compare', [])
+luminosity = config.get('luminosity', None)
 output_csv =  f"outputChi2_{distribution_for_test}.csv"
 
 # Open the ROOT file                                                                                                                                                                          
@@ -33,9 +34,16 @@ if not nominal_hist:
     exit(1)
 
 # Generate pseudodata using the expected values
-pseudodata_hist = nominal_hist.Clone()
-pseudodata_hist.Reset()
-pseudodata_hist.FillRandom(nominal_hist, int(nominal_hist.Integral()*10_000_000)) # Fixed cross-section of 10 ab-1
+if luminosity is not None:
+    pseudodata_hist = nominal_hist.Clone()
+    pseudodata_hist.Reset()
+    pseudodata_hist.FillRandom(nominal_hist, int(nominal_hist.Integral()*luminosity)) # Fixed cross-section of 10 ab-1
+
+    x2fitopt='UW'
+else:
+    pseudodata_hist = nominal_hist
+
+    x2fitopt='WW'
 
 # Open CSV file for writing
 with open(output_csv, 'w', newline='') as csvfile:
@@ -51,8 +59,8 @@ with open(output_csv, 'w', newline='') as csvfile:
             print(f" Histogram 'hist_{distribution_for_test}_{hist_name}' not found in file")
             continue
          
-        chi2 = pseudodata_hist.Chi2Test(hist, "UW CHI2")
-        p_value = pseudodata_hist.Chi2Test(hist, "UW P")
+        chi2 = pseudodata_hist.Chi2Test(hist, f"{x2fitopt} NORM CHI2")
+        p_value = pseudodata_hist.Chi2Test(hist, f"{x2fitopt} NORM P")
         
         csvwriter.writerow([hist_name, chi2, p_value])
         # Print results                                                                                                                                                                       
