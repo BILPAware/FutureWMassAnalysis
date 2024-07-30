@@ -35,8 +35,7 @@ if not nominal_hist:
 # Generate pseudodata using the expected values
 pseudodata_hist = nominal_hist.Clone()
 pseudodata_hist.Reset()
-print(nominal_hist)
-pseudodata_hist.FillRandom(nominal_hist, 10_000_000) # Fixed cross-section of 10 ab-1
+pseudodata_hist.FillRandom(nominal_hist, int(nominal_hist.Integral()*10_000_000)) # Fixed cross-section of 10 ab-1
 
 # Open CSV file for writing
 with open(output_csv, 'w', newline='') as csvfile:
