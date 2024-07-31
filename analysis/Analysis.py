@@ -89,7 +89,7 @@ class Analysis:
             if not isinstance(attr,ROOT.TH1):
                 continue # not a histogram
 
-            attr.Scale(sample.crosssection/sample.reader.GetEntries())
+            attr.Scale(sample.crosssection/nevents)
 
 
         return histograms

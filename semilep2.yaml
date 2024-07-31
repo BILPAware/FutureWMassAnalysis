@@ -1,0 +1,74 @@
+ratio:
+  reference: 2
+  yaxis:
+    min: 0.8
+    max: 1.2
+    title: ratio
+inputs:
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_100000_01.root
+    title: 80.3293 GeV
+    crosssection: 0.016612
+    style:
+      linecolor: kAzure
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_02.root
+    title: 80.3426 GeV
+    crosssection: 0.016638
+    style:
+      linecolor: kSpring
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_03.root
+    title: 80.3559 GeV
+    crosssection: 0.016666
+    style:
+      linecolor: kTeal
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_04.root
+    title: 80.36255 GeV
+    crosssection: 0.01668
+    style:
+      linecolor: kRed
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_05.root
+    title: 80.3672 GeV
+    crosssection: 0.016688
+    style:
+      linecolor: kMagenta
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_06.root
+    title: 80.3692 GeV
+    crosssection: 0.016692
+    style:
+      linecolor: kBlack
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_07.root
+    title: 80.3712 GeV
+    crosssection: 0.016698
+    style:
+      linecolor: kGray
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_08.root
+    title: 80.37585 GeV
+    crosssection: 0.016708
+    style:
+      linecolor: kPink
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_09.root
+    title: 80.3825 GeV
+    crosssection: 0.016716
+    style:
+      linecolor: kCyan
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_10.root
+    title: 80.3958 GeV
+    crosssection: 0.016744
+    style:
+      linecolor: kOrange
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_semilep_combined_1000000_11.root
+    title: 80.4091 GeV
+    crosssection: 0.016778
+    style:
+      linecolor: kBlue
+      linewidth: 2
+

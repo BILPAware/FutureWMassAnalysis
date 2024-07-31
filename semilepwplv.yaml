@@ -1,0 +1,67 @@
+inputs:
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_01/tag_1_delphes_events.root
+    title: 80.3293
+    crosssection: 0.008306
+    style:
+      linecolor: kAzure
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_02/tag_1_delphes_events.root
+    title: 80.3426
+    crosssection: 0.008319
+    style:
+      linecolor: kSpring
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_03/tag_1_delphes_events.root
+    title: 80.3559
+    crosssection: 0.008333
+    style:
+      linecolor: kTeal
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_04/tag_1_delphes_events.root
+    title: 80.36255
+    crosssection: 0.00834
+    style:
+      linecolor: kRed
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_05/tag_1_delphes_events.root
+    title: 80.3672
+    crosssection: 0.008344
+    style:
+      linecolor: kMagenta
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_06/tag_1_delphes_events.root
+    title: 80.3692
+    crosssection: 0.008346
+    style:
+      linecolor: kBlack
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_07/tag_1_delphes_events.root
+    title: 80.3712
+    crosssection: 0.008349
+    style:
+      linecolor: kGray
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_08/tag_1_delphes_events.root
+    title: 80.37585
+    crosssection: 0.008354
+    style:
+      linecolor: kPink
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_09/tag_1_delphes_events.root
+    title: 80.3825
+    crosssection: 0.008358
+    style:
+      linecolor: kCyan
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_10/tag_1_delphes_events.root
+    title: 80.3958
+    crosssection: 0.008372
+    style:
+      linecolor: kOrange
+      linewidth: 2
+  - path: /disk/moose/general/FutureWMass/samples/js_massscan_1000000_root_wplv_01/Events/run_11/tag_1_delphes_events.root
+    title: 80.4091
+    crosssection: 0.008389
+    style:
+      linecolor: kBlue
+      linewidth: 2
