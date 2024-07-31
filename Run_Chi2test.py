@@ -2,6 +2,29 @@ import ROOT
 import yaml
 import csv
 
+
+def calc_chi_square(nominal,histogram):
+    if histogram.GetNbinsX()!= nominal.GetNbinsX():
+        exit(1)
+        #print ("bin cont. nominal","+/- bin err.","|| bin cont. test","+/- bin. err","||Sum(chi-square)")
+    chi_square= (histogram.GetBinContent(1)-nominal.GetBinContent(1))**2 / (histogram.GetBinError(1)**2 + nominal.GetBinError(1)**2)
+    for i in range(2, histogram.GetNbinsX()+1):
+        E_i = nominal.GetBinContent(i)
+        O_i = histogram.GetBinContent(i)
+        sigma_E_i = nominal.GetBinError(i)**2
+        sigma_O_i = histogram.GetBinError(i)**2
+
+        # Avoid division by zero
+        if E_i != 0:
+            #print(E_i,nominal.GetBinError(i),O_i,"||",histogram.GetBinError(i),"||",chi_square)
+            chi_square = chi_square + (O_i - E_i) ** 2 /(sigma_E_i+sigma_O_i) 
+        else:
+            # You can handle this case in different ways. Here we skip the bin.
+            print(f"Skipping bin {i} because expected value is zero.")
+       
+
+    return chi_square
+
 def read_config(config_file):
     """
     read YAML configuration
@@ -32,28 +55,32 @@ if not nominal_hist:
     print(f"Nominal histogram '{nominal_hist_name}' not found in file")
     exit(1)
 
+    
 # Open CSV file for writing
 with open(output_csv, 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile)
     # Write CSV header
-    csvwriter.writerow(['W mass', 'Chi2'])
+    csvwriter.writerow(['W_mass', 'Chi2','Hand_Calc_Chi2'])
     
     # Loop over all histograms you want to compare nominal to
     for hist_name in histograms_to_compare:
         hist = file.Get(f"hist_{distribution_for_test}_{hist_name}")
-        
+
         if not hist:
             print(f" Histogram 'hist_{distribution_for_test}_{hist_name}' not found in file")
             continue
-         
-        chi2 = nominal_hist.Chi2Test(hist, "WW NORM CHI2")
-        p_value = nominal_hist.Chi2Test(hist, "WW NORM P")
+        hand_calculation = calc_chi_square(nominal_hist,hist)
+        print("chi-square (bin-by-bin)=",hand_calculation)
         
-        csvwriter.writerow([hist_name, chi2])
+        chi2 = nominal_hist.Chi2Test(hist, "CHI2")
+        p_value = nominal_hist.Chi2Test(hist, "P")
+        
+        csvwriter.writerow([hist_name, chi2,hand_calculation])
         # Print results                                                                                                                                                                       
         print(f"Comparing nominal histogram (hist_{distribution_for_test}_{nominal_hist_name}) with 'hist_{distribution_for_test}_{hist_name}':")
         print(f"Chi2: {chi2}")
         print(f"p-value: {p_value}")
+        
         
 # Close the file                                                                                                                                                                              
 file.Close()
